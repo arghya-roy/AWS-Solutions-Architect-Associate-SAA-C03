@@ -81,6 +81,7 @@ Lambda eliminates the need to provision and manage servers. You upload code, def
 - By default, Lambda runs **outside your VPC** (has internet access).
 - When placed **inside a VPC**, it loses internet access unless you add a **NAT Gateway**.
 - Lambda creates **Elastic Network Interfaces (ENIs)** in your subnets.
+- Lambda in VPC must need NAT to communicate with internet, Internet gateway alone would't work. either need NAT or NAT and IG both.
 
 > **Exam Tip:** "Lambda needs to access RDS in a private subnet" → Place Lambda in the VPC + use private subnet + security groups.
 
