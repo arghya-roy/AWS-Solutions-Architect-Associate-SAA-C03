@@ -286,9 +286,9 @@ Fargate is a **serverless compute engine for containers**. It removes the need t
 |---|---|
 | **Ephemeral storage** | 20 GB default, up to **200 GB** (configurable) |
 | **EFS (Elastic File System)** | Persistent, shared storage across tasks |
-| **EBS** | Not natively supported for Fargate (use ECS EC2 for EBS) |
+| **EBS** | Fargate supports managed EBS volumes for ECS tasks, but it cant be shared |
 
-> **Exam Tip:** If tasks need **persistent shared storage**, use **EFS**. EBS is not supported with Fargate.
+> **Exam Tip:** If tasks need **persistent shared storage**, use **EFS**. EBS support in Fargate is limited to managed task-attached volumes and is not shared storage. For persistent shared storage across tasks, use EFS..
 
 ---
 
