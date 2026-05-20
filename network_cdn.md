@@ -3,6 +3,27 @@
 > **Services Covered:** Client VPN · CloudFront · Direct Connect · ELB · Global Accelerator · PrivateLink · Route 53 · Site-to-Site VPN · Transit Gateway · Amazon VPC
 
 ---
+# OSI Model Layers
+
+| Layer No. | Layer Name          | Main Function                                      | Examples |
+|------------|--------------------|---------------------------------------------------|-----------|
+| 7 | Application Layer | Provides network services to end-user applications | HTTP, HTTPS, FTP, SMTP, DNS |
+| 6 | Presentation Layer | Data formatting, encryption, compression | SSL/TLS, JPEG, ASCII |
+| 5 | Session Layer | Establishes, manages, and terminates sessions | NetBIOS, RPC |
+| 4 | Transport Layer | Reliable data transfer, flow control, error handling | TCP, UDP |
+| 3 | Network Layer | Routing and logical addressing | IP, ICMP, Routers |
+| 2 | Data Link Layer | Node-to-node delivery, MAC addressing | Ethernet, Switches, MAC |
+| 1 | Physical Layer | Transmission of raw bits over physical medium | Cables, Hubs, Signals |
+
+---
+
+# Mnemonic
+
+## Bottom → Top (1 → 7)
+**P**lease **D**o **N**ot **T**hrow **S**ausage **P**izza **A**way
+
+## Top → Bottom (7 → 1)
+**A**ll **P**eople **S**eem **T**o **N**eed **D**ata **P**rocessing
 
 ## Networking Quick-Reference Matrix
 
