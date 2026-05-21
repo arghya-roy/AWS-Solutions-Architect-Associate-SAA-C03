@@ -4,6 +4,522 @@
 
 ---
 
+# AWS Exam Study Guide: AWS Transform
+> **Target Exams:** AWS Solutions Architect Associate (SAA-C03) & Professional (SAP-C02)
+> **Source:** https://aws.amazon.com/transform/ (verified May 2026)
+
+---
+
+## ⚠️ Important Exam Note
+
+AWS Transform is a **relatively new service** (launched ~2024–2025) and is an **emerging topic** on AWS certification exams. It is more likely to appear on the **SAP-C02 (Professional)** level given its enterprise modernization focus. It may appear in scenario-based questions involving:
+- Migration strategy selection (the 7 Rs)
+- Mainframe or Windows/.NET modernization at scale
+- VMware to AWS migration with AI-assisted planning
+- Code modernization and tech debt reduction
+
+---
+
+## What Is AWS Transform?
+
+AWS Transform is an **agentic AI-powered enterprise IT transformation workbench** that accelerates cloud migration, legacy application modernization, and technical debt reduction using specialized AI agents. It combines:
+
+- **Multi-agent orchestration** — dozens of specialized AI agents working together
+- **Agentic AI** — goal-driven automation that adapts plans dynamically
+- **Continuous learning** — agents improve from every execution and human feedback
+- **Collaborative workspaces** — cross-functional teams track and manage transformation in real time
+
+**Real-World Impact (as of 2026):**
+- Migrated tens of thousands of VMs
+- Processed over **4.5 billion lines of code**
+- Saved **1.69 million hours** of manual effort (equivalent to ~810 developer years)
+- Up to **5x faster** full-stack Windows modernization
+
+---
+
+## The Problem It Solves
+
+### Traditional Modernization Pain Points
+
+| Pain Point | How AWS Transform Addresses It |
+|---|---|
+| Manual assessment takes weeks/months | Automated discovery and analysis in minutes/hours |
+| Dependency mapping is complex and error-prone | AI-powered dependency analysis and wave planning |
+| COBOL/mainframe expertise is scarce | AI agents encode 20 years of migration expertise |
+| .NET Framework migration requires specialized skills | Automated porting with AI-led error remediation |
+| Inconsistent results across large codebases | Repeatable, continually improving transformations |
+| Migration projects run years behind schedule | Parallel transformation of hundreds of apps simultaneously |
+| Legacy licensing costs remain high | Eliminates Windows/SQL Server licensing by moving to Linux/Aurora |
+
+---
+
+## AWS Transform Use Cases / Types
+
+AWS Transform has **five main transformation areas**, each with a dedicated specialized agent:
+
+---
+
+### 1. AWS Transform for Assessments
+
+#### What It Does
+Analyzes your IT environment to generate a **data-driven business case** for migration — including TCO comparisons, EC2 right-sizing recommendations, and cost projections — without needing a detailed manual inventory process.
+
+#### How It Works
+```
+Upload server inventory (RVTools, AWS Transform discovery tool,
+Migration Evaluator collector, or third-party tools)
+            ↓
+Specify target AWS Region
+            ↓
+AWS Transform analyzes inventory → maps to optimal EC2 instances
+            ↓
+Business case generated:
+  ├── TCO comparison (on-prem vs AWS)
+  ├── Multiple purchase commitment scenarios (On-Demand, Reserved)
+  ├── OS licensing options (BYOL vs license-included)
+  ├── Tenancy options (dedicated vs shared)
+  └── Next step recommendations
+            ↓
+Download PDF or ask follow-up questions via built-in AI chat
+```
+
+#### Supported Data Sources
+- **RVTools** exports (CSV/Excel with VMware configuration data)
+- **AWS Transform discovery tool** (OVA appliance deployed in vCenter)
+- **AWS Migration Evaluator** agentless collector
+- **AWS Migration Portfolio Assessment (MPA)** exports
+- Third-party tools: Cloudamize, modelizeIT
+
+#### AWS Transform Assessments vs AWS Migration Evaluator
+
+| Feature | AWS Transform Assessments | AWS Migration Evaluator |
+|---|---|---|
+| **Type** | Self-service, fast | Expert-led, comprehensive |
+| **Focus** | x86 server migration to EC2 | Broad (storage, sustainability, SQL Server, etc.) |
+| **Guidance** | AI chat assistant | AWS Solutions Architects |
+| **Time to result** | Minutes to hours | Days to weeks |
+| **Best for** | Quick TCO estimates, initial planning | Thorough enterprise migration planning |
+
+---
+
+### 2. AWS Transform for Windows (Full-Stack Windows Modernization)
+
+#### What It Does
+Accelerates full-stack Windows modernization — converting .NET Framework applications to cross-platform .NET (Linux) and migrating Microsoft SQL Server databases to Amazon Aurora PostgreSQL — up to **5x faster** than manual methods, reducing operating costs by **up to 70%**.
+
+#### Two Main Components
+
+##### Component A: .NET Framework → Cross-Platform .NET
+```
+Source code in GitHub / GitLab / Azure Repos / Bitbucket
+            ↓ (connects via AWS CodeConnections — requires IT admin approval)
+Analysis Phase:
+  ├── Identify supported project types
+  ├── Map repository dependencies
+  ├── Identify private packages and third-party libraries
+  └── Generate transformation plan (ordered by dependency + modification date)
+            ↓
+Human Review → Approve plan
+            ↓
+Transformation (in network-isolated environment):
+  ├── Convert .NET Framework 3.5+ / Core 3.1 / .NET 5/6/7 → .NET 8 (LTS) or .NET 10
+  ├── Port MVC, Web API, WCF, Class Libraries, Console Apps
+  ├── Convert Razor Views, Web Forms → Blazor on ASP.NET Core
+  ├── Port WinForms, WPF, Xamarin → cross-platform .NET
+  ├── Entity Framework + ADO.NET → Aurora PostgreSQL compatible
+  └── AI-led auto-remediation loop for build errors
+            ↓
+Transformed code committed to new branch in your repository
+            ↓
+Deploy as container on Amazon EC2 or Amazon ECS
+```
+
+##### Component B: SQL Server → Aurora PostgreSQL
+```
+SQL Server on EC2 or RDS
+            ↓
+Discovery: schemas, stored procedures, database dependencies in source code
+            ↓
+Wave planning: group databases + apps by dependency relationships
+            ↓
+3-Step Transformation:
+  Step 1 — Schema Conversion:
+    SQL Server schema → Aurora PostgreSQL schema
+    AI auto-remediation for conversion failures
+    Stored procedures converted to PostgreSQL-compatible
+
+  Step 2 — Data Migration:
+    Data migrated from SQL Server to Aurora PostgreSQL clusters
+    Uses AWS DMS under the hood
+    Migration issues reported for manual resolution
+
+  Step 3 — Code Transformation:
+    Connection strings updated → PostgreSQL target
+    Embedded SQL ported for PostgreSQL compatibility
+    Entity Framework / ADO.NET updated
+    Changes committed to new repository branch
+```
+
+#### Supported .NET Project Types
+Console apps, Class libraries, Web APIs, WCF Services, MVC, SPA, ASP.NET Web Forms, WinForms, WPF, Xamarin, VB.NET, xUnit/NUnit/MSTest unit tests
+
+#### Key Properties
+- **Code ownership**: You own all transformed code; AWS Transform does not retain code after job completion
+- **Security**: Customer-managed KMS keys for encrypting code in the transformation environment
+- **Human-in-the-loop (HITL)**: Developers can review and refine in Visual Studio IDE extension
+- **Progress tracking**: Interactive AI chat + detailed worklogs in the web console
+- **Notifications**: Email with deep links to transformed repositories on completion
+
+---
+
+### 3. AWS Transform for Mainframe
+
+#### What It Does
+Accelerates mainframe application modernization from **years to months** using an AI agent that orchestrates analysis, documentation generation, business logic extraction, monolith decomposition, code transformation, and automated testing.
+
+#### Supported Modernization Patterns
+
+| Pattern | Description | Output |
+|---|---|---|
+| **Refactor** | Convert COBOL to modern Java | Functional-equivalent Java apps on AWS |
+| **Reimagine** | Transform to cloud-native architecture | Modern cloud-native microservices |
+
+#### Mainframe Modernization Flow (Refactor Pattern)
+```
+COBOL Mainframe Codebase (uploaded as zip to S3)
+  ├── COBOL programs
+  ├── Copybooks
+  ├── JCL (Job Control Language)
+  ├── Procedures + parameter cards
+  ├── DB2 definitions
+  └── CICS / IMS TM / CSD files (optional)
+            ↓
+Analyze Step (required):
+  ├── Classify file types
+  ├── Metrics: LOC, effective LOC, cyclomatic complexity
+  ├── Identify missing/duplicate files
+  └── Generate dependency mapping
+            ↓
+Decompose Step:
+  ├── Break monolith into business-aligned domains
+  ├── Identify low-utilization components (candidates for retirement)
+  └── Generate prioritized modernization waves
+            ↓
+Documentation Step:
+  ├── Extract business rules and logic from COBOL
+  ├── Generate functional specifications
+  └── Make knowledge accessible to non-mainframe developers
+            ↓
+Transform Step (COBOL → Java):
+  └── Automated refactoring with functional equivalence preservation
+            ↓
+Test Step:
+  ├── Automated test plan generation
+  ├── Test data collection scripts
+  └── Continuous regression testing environment
+            ↓
+Post-Transformation:
+  └── IaC templates (CloudFormation, CDK, Terraform) for deployment
+```
+
+#### Key Capabilities
+- **Business logic extraction**: Extracts business rules from COBOL — makes mainframe knowledge accessible to business stakeholders without mainframe expertise
+- **Modular approach**: Use any individual phase (analyze, decompose, document, transform, test) independently
+- **Cyclomatic complexity analysis**: Understand code complexity before committing to transformation
+- **Reforge step**: Improve Java code readability and maintainability post-transformation
+
+---
+
+### 4. AWS Transform for VMware
+
+#### What It Does
+AI-powered end-to-end VMware to Amazon EC2 migration — automating the entire lifecycle from discovery through wave planning, network conversion, and cutover. Migrations that previously took **years now complete in months**.
+
+#### Supported Migration Job Plans
+
+| Job Plan | Scope |
+|---|---|
+| **End-to-end** | Discovery → wave planning → VPC network generation → server rehost |
+| **Network migration only** | Generate and deploy VPC configurations only |
+| **Network + server migration** | Skip discovery; configure VPC + migrate servers |
+| **Discovery + server migration** | Discover + plan + migrate; skip network configuration |
+
+#### VMware Migration Flow
+```
+Source Environment (VMware, bare metal, Hyper-V)
+            ↓
+Discovery (via one of):
+  ├── AWS Transform discovery tool (OVA in vCenter)
+  ├── RVTools CSV/Excel exports
+  ├── Cloudamize / Matilda Cloud / ModelizeIT exports
+  └── Manual inventory upload
+            ↓
+Analysis + Planning:
+  ├── Application dependency mapping
+  ├── Logical application group identification (servers that must migrate together)
+  ├── Right-sized EC2 instance recommendations
+  └── Business case with TCO projections
+            ↓
+Network Conversion:
+  ├── Convert on-prem network topology → VPC configuration
+  ├── Supports Cisco ACI, Palo Alto, Fortigate as network sources
+  ├── Generate IaC (CloudFormation / Terraform)
+  └── Automated VPC deployment
+            ↓
+Rehost (migrate servers to EC2):
+  └── Uses AWS Application Migration Service (MGN) under the hood
+            ↓
+Target: Amazon EC2 in your chosen AWS Region
+```
+
+#### Key Properties
+- Handles **complex multi-tier applications** with 500+ VMs
+- Supports **multiple target accounts** in one migration
+- Private connectivity supported: **Direct Connect** or **Site-to-Site VPN** (no public internet for data replication)
+- Supports rehost to **EC2** (NOT automated migration to VMware Cloud on AWS / Amazon EVS)
+- Encryption: TLS 1.2+ in transit; KMS at rest (customer-managed keys supported)
+
+#### Available Workspace Regions
+US East (N. Virginia), Asia Pacific (Mumbai, Seoul, Sydney, Tokyo), Canada (Central), Europe (Frankfurt, London)
+
+---
+
+### 5. AWS Transform for Custom Code
+
+#### What It Does
+Performs **large-scale custom code modernization** across any codebase — from version upgrades and runtime migrations to complex framework changes and organization-specific transformations — using agentic AI that learns and improves with every execution.
+
+#### Four Core Components
+
+| Component | Description |
+|---|---|
+| **Natural language transformation definition** | Define transformations via chat + documentation + code samples |
+| **Transformation execution** | Apply transformations consistently across hundreds of codebases in parallel |
+| **Continual learning** | Automatically improves from execution data and developer feedback |
+| **AWS-managed transformations** | Pre-built, vetted transformations for common scenarios |
+
+#### AWS-Managed (Out-of-the-Box) Transformations
+
+| Transformation | Details |
+|---|---|
+| **Java 8 → 17** | Gradle and Maven support |
+| **Node.js 12 → 22** | Including Lambda environments |
+| **Python → 3.11/3.12/3.13** | Standard and Lambda runtimes |
+| **AWS SDK v1 → v2** | Migrate legacy SDK usage |
+
+#### Custom Transformation Examples
+- Java 8 → 17 with organization-specific internal library rules
+- x86 → AWS Graviton (ARM) runtime migrations
+- Spring Boot version upgrades
+- Angular → React framework migration
+- Observability instrumentation (add structured logging, tracing)
+- Complex language translations (e.g., COBOL → Python)
+- API framework migrations
+
+#### Custom Transformation Lifecycle
+
+```
+Phase 1 — Define (optional for custom; skip for AWS-managed):
+  Provide: natural language prompt + reference docs + code samples
+  AI generates transformation definition
+  Iteratively refine via chat
+  Test on sample codebases
+
+Phase 2 — Pilot:
+  Apply transformation to a subset of codebases
+  Validate results and estimate cost/time
+  Continual learning improves quality during pilot
+
+Phase 3 — Scaled Execution:
+  Bulk execution across all target codebases via CLI or web console
+  Track progress in real time
+
+Phase 4 — Monitor + Review:
+  Review AI-generated "knowledge items" from continual learning
+  Approve or disable specific learnings
+  Enable or disable improvements for future runs
+```
+
+#### Access Methods
+- **AWS Transform CLI**: Local development, CI/CD pipeline integration, scriptable
+- **AWS Transform Web App**: Large-scale campaigns, real-time progress tracking
+- **IDE integration**: VS Code, Kiro IDE (via Kiro plugin for human-in-the-loop work)
+- **MCP (Model Context Protocol)**: Invoke from orchestrators, IDEs, coding environments (Claude, Cursor, Codex, etc.)
+
+---
+
+## AWS Transform Architecture (How It All Fits Together)
+
+```
+Access Layer:
+  ├── Web Console (console.aws.amazon.com/transform)
+  ├── AWS Transform CLI
+  ├── IDE Plugins (VS Code, Kiro)
+  └── MCP Integration (Claude, Cursor, Codex)
+            ↓
+AWS Transform Workbench:
+  ├── Shared workspace (cross-functional team collaboration)
+  ├── Natural language chat interface
+  ├── Worklogs (audit trail of all agent actions)
+  └── Progress tracking dashboard
+            ↓
+Agent Orchestration Layer:
+  ├── Specialized task agents (network generation, COBOL analysis, .NET porting, etc.)
+  ├── Dynamic job plan generation (adapts to your specific goals)
+  └── Human-in-the-loop (HITL) checkpoints
+            ↓
+Underlying AWS Services:
+  ├── AWS Application Migration Service (MGN) — for VMware rehost
+  ├── AWS DMS — for SQL Server → Aurora PostgreSQL data migration
+  ├── AWS CodeConnections — for secure source code access
+  ├── Amazon Bedrock — foundation models powering agents
+  ├── Amazon S3 — temporary code storage during transformation
+  └── KMS — encryption of code and data at rest
+```
+
+---
+
+## Key Differentiators vs Traditional Migration Tools
+
+| Dimension | Traditional Tools | AWS Transform |
+|---|---|---|
+| **Planning** | Manual spreadsheets, weeks of work | AI-generated wave plans in minutes |
+| **Dependency mapping** | Manual interviews + diagrams | Automated from code analysis and network data |
+| **Code conversion** | Manual developer effort (COBOL → Java) | Automated with AI agents, HITL oversight |
+| **Learning** | None — same quality regardless of iterations | Continual learning improves each run |
+| **Scale** | One application at a time | Hundreds in parallel |
+| **Expertise required** | Deep mainframe/COBOL expertise | AI agents encode the expertise |
+| **Error handling** | Manual debugging | AI auto-remediation loop |
+| **Progress visibility** | Status meetings and emails | Real-time chat + worklogs |
+
+---
+
+## AWS Transform vs Related AWS Migration Services
+
+| Service | Relationship to AWS Transform |
+|---|---|
+| **AWS Application Migration Service (MGN)** | AWS Transform for VMware uses MGN under the hood for the actual server rehost |
+| **AWS DMS** | AWS Transform for Windows uses DMS for SQL Server → Aurora PostgreSQL data migration |
+| **AWS Application Discovery Service** | AWS Transform includes its own discovery tool; ADS is a standalone alternative |
+| **AWS Migration Hub** | Separate tracking service; AWS Transform has its own built-in progress tracking |
+| **AWS Schema Conversion Tool (SCT)** | AWS Transform for Windows automates what SCT does manually — schema conversion at scale |
+| **AWS Migration Evaluator** | Complementary; Evaluator is expert-guided comprehensive assessment; Transform Assessment is self-service fast |
+
+---
+
+## Security and Data Privacy
+
+| Area | Details |
+|---|---|
+| **Code storage** | Stored only for job duration; purged after completion |
+| **Encryption in transit** | TLS 1.2+ for all communications |
+| **Encryption at rest** | AWS-managed or customer-managed KMS keys |
+| **Source code access** | Via AWS CodeConnections — requires IT admin approval |
+| **Database access** | Via explicit admin-approved credentials + AWS Secrets Manager |
+| **Code ownership** | Customer owns all transformed code; AWS retains no copies after job completion |
+| **Model training** | Content may be used for service improvement/FM training unless you opt out |
+| **Opt-out** | Via AWS Organizations AI services opt-out policy |
+| **Schema data** | Deleted after job completion; not retained |
+
+---
+
+## Exam Tips Summary
+
+### Core Identity
+- ✅ AWS Transform = **agentic AI** workbench for enterprise IT modernization
+- ✅ NOT a traditional migration tool — uses AI agents with continuous learning
+- ✅ Covers: Assessment, Windows/.NET, Mainframe, VMware, Custom Code
+- ✅ Leverages MGN (for VM rehost), DMS (for DB migration), Bedrock (for AI agents)
+- ✅ Launched ~2024–2025; **newer service** — more likely SAP-C02 than SAA-C03
+
+### Assessment
+- ✅ Self-service fast TCO analysis vs Migration Evaluator (expert-led, comprehensive)
+- ✅ Accepts RVTools, Cloudamize, MPA exports as data sources
+- ✅ Output: business case PDF + AI chat for follow-up questions
+
+### Windows Modernization
+- ✅ .NET Framework → .NET 8/10 (cross-platform Linux-ready)
+- ✅ SQL Server → Aurora PostgreSQL (3 steps: schema → data → code)
+- ✅ Up to 5x faster than manual porting; up to 70% operating cost reduction
+- ✅ Code committed to your repo branch; you own it; AWS does not retain it
+- ✅ Customer-managed KMS keys for code encryption in transformation environment
+- ✅ Human-in-the-loop review at key checkpoints; Visual Studio IDE extension for developers
+
+### Mainframe Modernization
+- ✅ Refactor = COBOL → Java (functional equivalence); Reimagine = cloud-native rewrite
+- ✅ Analyze step is always required first
+- ✅ Key capability: business logic extraction from COBOL for non-mainframe stakeholders
+- ✅ Cyclomatic complexity analysis helps assess modernization effort before committing
+- ✅ Modular — use any individual phase independently
+
+### VMware Migration
+- ✅ End-to-end migration lifecycle: discovery → wave planning → network → rehost
+- ✅ Uses MGN under the hood for server rehost to EC2
+- ✅ Supports Cisco ACI, Palo Alto, Fortigate for network configuration conversion
+- ✅ Private connectivity: Direct Connect or Site-to-Site VPN (keep data off public internet)
+- ✅ Does NOT support automated migration to VMware Cloud on AWS / Amazon EVS
+
+### Custom Transformations
+- ✅ AWS-managed prebuilt: Java 8→17, Node.js 12→22, Python →3.11/12/13, AWS SDK v1→v2
+- ✅ Define custom: natural language + docs + code samples → AI generates transformation definition
+- ✅ Continual learning = "knowledge items" extracted per transformation; private per customer
+- ✅ CLI for CI/CD integration; Web app for large-scale campaigns
+- ✅ MCP integration enables use from Claude, Cursor, Codex, Kiro
+
+### Architecture / Migration Strategy Questions
+- ✅ AWS Transform maps to **Rehost** (VMware → EC2) and **Replatform** (.NET → Linux containers, SQL Server → Aurora) in the 7 Rs framework
+- ✅ When exam asks "modernize 200 .NET Framework apps with minimal manual effort" → AWS Transform for Windows
+- ✅ When exam asks "COBOL mainframe to Java with AI assistance" → AWS Transform for Mainframe
+- ✅ When exam asks "migrate 1,000 VMware VMs with AI wave planning" → AWS Transform for VMware
+- ✅ When exam asks "upgrade Java 8 to Java 17 across 500 microservices automatically" → AWS Transform Custom (AWS-managed Java transformation)
+
+---
+
+## Architecture Pattern: End-to-End Enterprise Modernization
+
+```
+DISCOVERY & ASSESSMENT
+────────────────────────
+On-prem inventory (RVTools/OVA collector)
+        ↓
+AWS Transform Assessment
+        ↓
+Business case (TCO, EC2 right-sizing, cost projections)
+        ↓
+
+MIGRATION PLANNING (AWS Transform for VMware)
+────────────────────────────────────────────
+Dependency mapping → logical app groups → migration waves
+        ↓
+Network topology → VPC IaC (CloudFormation/Terraform)
+        ↓
+
+INFRASTRUCTURE MIGRATION
+────────────────────────
+VMware VMs → AWS MGN → Amazon EC2
+(rehost with minimal downtime)
+        ↓
+
+DATABASE MODERNIZATION (AWS Transform for Windows)
+────────────────────────────────────────────────
+SQL Server → (Schema conversion) → (Data migration via DMS) → Aurora PostgreSQL
+        ↓
+
+APPLICATION MODERNIZATION (AWS Transform for Windows / Custom)
+──────────────────────────────────────────────────────────────
+.NET Framework → .NET 8 cross-platform
+Legacy Java 8 → Java 17 (continual learning)
+        ↓
+Deploy as containers → Amazon ECS / EC2
+        ↓
+
+ONGOING OPTIMIZATION
+────────────────────
+Cost savings: remove Windows Server + SQL Server licenses
+Performance: Aurora > SQL Server at scale; Linux cheaper than Windows
+Modern architecture: containers + managed DB + cloud-native services
+```
+
 ## Migration Quick-Reference Matrix
 
 | Service | Phase | What It Does | Exam Trigger Words |
